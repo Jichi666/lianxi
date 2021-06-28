@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>3D方框</title>
+	</head>
+	<style type="text/css">
+		body {
+			perspective: 500px;
+		
+		}
+		section{
+			position: relative;
+			top: 0;
+			left: 0;
+			width: 200px;
+			height: 200px;
+			margin: 150px auto;
+	
+		}
+	
+		section .s1 {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 200px;
+			height: 200px;
+			transform: rotateY(40deg);
+			transform-style: preserve-3d;
+			/* transition: all 1s; */
+			
+		} 
+		section .s1:first-child {
+			animation: 4s z linear infinite alternate forwards;
+		}
+		section .s1:last-child {
+			transform: scale3d(.5,.5,.5) rotateY(40deg);
+			animation: 4s v linear infinite alternate forwards;
+		}
+		section .s1 div {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 200px;
+			height: 200px;
+			opacity: .4;
+			transition: 1s;
+		}
+		section .s1:last-child div {
+			opacity: .6;
+		}
+		section .s1 img {
+			width: 200px;
+			height: 200px;
+		}
+		
+		section .s1 div:nth-child(1) {
+			transform: translateZ(100px);
+		}
+		section .s1 div:nth-child(2) {
+			transform: rotateY(90deg) translateZ(100px);
+		}
+		section .s1 div:nth-child(3) {
+			transform: rotateY(180deg) translateZ(100px) ;
+		}
+		section .s1 div:nth-child(4) {
+			transform: rotateY(270deg) translateZ(100px) ;
+		}
+		section .s1 div:nth-child(5) {
+			transform: rotateX(90deg) translateZ(100px) ;
+		}
+		section .s1 div:nth-child(6) {
+			transform: rotateX(270deg) translateZ(100px) ;
+		}
+		
+		section:hover .s1 div:nth-child(1) {
+			transform: translateZ(200px);
+		}
+		section:hover .s1 div:nth-child(2) {
+			transform: rotateY(90deg) translateZ(200px);
+		}
+		section:hover .s1 div:nth-child(3) {
+			transform: rotateY(180deg) translateZ(200px) ;
+		}
+		section:hover .s1 div:nth-child(4) {
+			transform: rotateY(270deg) translateZ(200px) ;
+		}
+		section:hover .s1 div:nth-child(5) {
+			transform: rotateX(90deg) translateZ(200px) ;
+		}
+		section:hover .s1 div:nth-child(6) {
+			transform: rotateX(270deg) translateZ(200px) ;
+		}
+		@keyframes z{
+			0%{
+				transform: rotateY(40deg);
+				
+			}
+			50%{
+				transform: rotateX(180deg);
+			}
+			100%{
+				transform: rotateX(180deg) rotateY(160deg);
+			}
+		}
+		@keyframes v{
+			0%{
+				transform: scale3d(.5,.5,.5) rotateY(40deg);
+				
+			}
+			50%{
+				transform: scale3d(.5,.5,.5) rotateX(180deg);
+			}
+			100%{
+				transform: scale3d(.5,.5,.5) rotateX(180deg) rotateY(160deg);
+			}
+		}
+	</style>
+	<body>
+		<section>
+			<div class="s1">
+				<div><img src="images/dog.jpg" ></div>
+				<div><img src="images/dog.jpg" ></div>
+				<div><img src="images/dog.jpg" ></div>
+				<div><img src="images/dog.jpg" ></div>
+				<div><img src="images/dog.jpg" ></div>
+				<div><img src="images/dog.jpg" ></div>
+			</div>
+			<div class="s1">
+				<div><img src="images/dog.jpg" ></div>
+				<div><img src="images/dog.jpg" ></div>
+				<div><img src="images/dog.jpg" ></div>
+				<div><img src="images/dog.jpg" ></div>
+				<div><img src="images/dog.jpg" ></div>
+				<div><img src="images/dog.jpg" ></div>
+			</div>
+			
+		</section>
+	</body>
+</html>
